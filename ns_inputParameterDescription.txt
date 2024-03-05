@@ -1,0 +1,53 @@
+Author: Sangwoo Kim
+Date: 3/3/2021 - 
+
+3/3/2021
+
+This is a description of input parameters for nucleus simulations. In the codes, these parameters are stored in two structure variables, "gmp" and "mcp" where gmp is geometric parameters and mcp is mechanical parameters
+
+
+Parameter "gmp"
+
+gmp.bs: box size. Here, we consider a system of square box with periodic boundary condition in all directions. The size of the square box is bs*bs. Also, the number of cells in the simulation is simply nFa=bs^2 so that an available space for each cell is equal to 1. 
+
+gmp.nFa: number of cells in the system, gmp.bs^2
+
+gmp.tgAr: available area for each cell, total area/number of cells = 1
+
+gmp.sstn: shear strain value, generally set to 0
+
+gmp.edpc: edge segment length criterion
+
+gmp.runTm: total run time in tau_t
+
+gmp.dt: time step(input variable is tmSt) in the unit of tau_r
+
+gmp.svPt: data save points. For every gmp.svPt time step, configuration data is saved in the export variables.  
+
+gmp.lsc: length scale, sqrt(total_area/number_of_cells)*psi
+
+gmp.asp: nucleus aspect ratio, 0<aspect_ratio<1
+
+Parameter "mcp"
+
+mcp.delta: relative strength of normal force to tangential force. This modulus is multiplied to osmotic pressure force. We set this parameter value equal to 10 for all simulations
+
+mcp.psi: density parameter, the ratio of cell size to available system size. In this case, we set this parameter value equal to 1 as we are only interested in confluent systems for this project. 
+
+mcp.mu: magnitude of tension fluctuations.
+
+mcp.taut: tension relaxation time scale to vertex dissipation time scale
+
+mcp.nvf: nuclear volume fraction
+
+mcp.nstf: nuclear stiffness
+
+mcp.taun: nuclear translational dissipation time scale
+
+mcp.taua: nuclear rotational dissipation time scale
+
+mcp.mun: magnitude of nuclear fluctuations, set to 0. 
+
+mcp.nsrt: nuclear restoring force modulus
+
+
